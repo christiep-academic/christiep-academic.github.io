@@ -1,0 +1,1307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Christie Pang — HCI Researcher, PhD Student">
+  <title>Christie Pang</title>
+  <link rel="icon" type="image/x-icon" href="icon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Caveat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script>
+    /* Set theme before first paint to avoid flash */
+    (function(){
+      var dark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light');
+    })();
+  </script>
+</head>
+<body>
+
+  <!-- Scroll position indicator -->
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+  <!-- =====================================================
+       PAGE LOADER (book flip animation)
+       ===================================================== -->
+  <div class="page-loader active" id="pageLoader" role="status" aria-label="Loading">
+    <div class="book-scene">
+      <div class="book-body">
+        <!-- Left cover -->
+        <div class="book-left"></div>
+        <!-- Spine -->
+        <div class="book-spine"></div>
+        <!-- Right cover -->
+        <div class="book-right"></div>
+      </div>
+      <!-- Flipping pages (absolutely positioned over right half) -->
+      <div class="page-flip-wrap">
+        <div class="flip-page p1"></div>
+        <div class="flip-page p2"></div>
+        <div class="flip-page p3"></div>
+      </div>
+      <!-- Logo overlaid on top of book -->
+      <img src="logo.gif" class="loader-logo" alt="">
+    </div>
+    <p class="loader-text">Growing the digital in reality…</p>
+  </div>
+
+
+  <!-- =====================================================
+       SIDE NAVIGATION (desktop)
+       ===================================================== -->
+  <nav class="side-nav" id="sideNav" aria-label="Main navigation">
+
+    <button class="nav-toggle" id="navToggle"
+            aria-label="Toggle navigation sidebar"
+            aria-expanded="false"
+            aria-controls="sideNav">
+      <img src="Icon/side-nav.png"          class="icon-open"  alt="">
+      <img src="Icon/side-nav-collapse.png" class="icon-close" alt="">
+    </button>
+
+    <div class="nav-avatar">
+      <img src="avatar.png" alt="Christie Pang">
+    </div>
+
+    <ul class="nav-links" role="list">
+      <li>
+        <a href="#home" class="nav-link active" data-page="home" aria-current="page">
+          <span class="nav-icon-wrap"><img src="Icon/home.png"       class="nav-icon" alt=""></span>
+          <span class="nav-label">Home</span>
+        </a>
+      </li>
+      <li>
+        <a href="#research" class="nav-link" data-page="research">
+          <span class="nav-icon-wrap"><img src="Icon/search.png"     class="nav-icon" alt=""></span>
+          <span class="nav-label">Research</span>
+        </a>
+      </li>
+      <li>
+        <a href="#about" class="nav-link" data-page="about">
+          <span class="nav-icon-wrap"><img src="Icon/about-me.png"   class="nav-icon" alt=""></span>
+          <span class="nav-label">About Me</span>
+        </a>
+      </li>
+      <li>
+        <a href="#blog" class="nav-link" data-page="blog">
+          <span class="nav-icon-wrap"><img src="Icon/blog.png"       class="nav-icon" alt=""></span>
+          <span class="nav-label">Blog</span>
+        </a>
+      </li>
+      <li>
+        <a href="#younger" class="nav-link" data-page="younger">
+          <span class="nav-icon-wrap"><img src="Icon/younger me.png" class="nav-icon" alt=""></span>
+          <span class="nav-label">Younger Me</span>
+        </a>
+      </li>
+    </ul>
+
+  </nav>
+
+
+  <!-- =====================================================
+       MAIN CONTENT
+       ===================================================== -->
+  <main class="main-content" id="mainContent">
+
+    <!-- ── HOME ── -->
+    <section id="home" class="page-section active" aria-label="Home">
+      <div class="section-inner">
+
+        <!-- Hero: intro + profile -->
+        <div class="home-hero">
+          <div class="home-text">
+            <h1 class="home-greeting">
+              Hiya! Christie here
+              <img src="logo.gif" class="title-logo" alt="">
+            </h1>
+            <div class="home-intro">
+              <p>
+                你好 (nei5 hou2), I am Christie Pang (彭晴), a Ph.D. student at HKUST advised by
+                <a href="https://panhui.people.ust.hk/" target="_blank" rel="noopener">Prof. Pan Hui</a>
+                and <a href="https://www.cse.ust.hk/~jamesk/" target="_blank" rel="noopener">Prof. James Kwok</a>.
+                I have a naturally curious mind that drifts between philosophy, sketching, and trying to make sense of the world.
+              </p>
+              <p>
+                My research sits at the intersection of CS, the arts, and human experience, centred on
+                digital humans and our evolving relationship with AI. I build interactive systems probing
+                how these dynamics unfold, from everyday interactions to intimate connections, always asking
+                <em>what identity, empathy, and genuine connection truly mean in a digital world</em>.
+              </p>
+              <p>
+                Previously at CityU with
+                <a href="https://www.cs.toronto.edu/~luzhc/" target="_blank" rel="noopener">Prof. Zhicong Lu</a>
+                and <a href="https://en.wikipedia.org/wiki/Maurice_Benayoun" target="_blank" rel="noopener">Professor Moben</a>.
+                My work has been featured in Nature, The Japan Times, and Times Higher Education, and awarded at
+                SIGGRAPH Asia and CSCW. See my <a href="#about" class="inline-nav" data-page="about">CV</a>.
+              </p>
+            </div>
+          </div>
+
+          <!-- Profile photo + links below photo -->
+          <div class="home-profile">
+            <div class="profile-stack hide-in-text-mode">
+              <img src="profile-1.jpg" class="profile-photo ph-default" alt="Christie Pang">
+              <img src="profile-2.jpg" class="profile-photo ph-hover"   alt="Christie Pang smiling">
+            </div>
+            <p class="show-in-text-mode" style="font-size:13px;color:var(--clr-text-muted);text-align:center;">
+              Profile photos hidden (text mode)
+            </p>
+
+            <!-- Links live below the photo — Amy Pavel style -->
+            <div class="home-links">
+              <div class="home-link-row">
+                <span class="home-link-label">Email</span>
+                <a href="mailto:ccpangaa@connect.ust.hk" class="home-link">ccpangaa@connect.ust.hk</a>
+              </div>
+              <div class="home-link-row">
+                <span class="home-link-label">Publications</span>
+                <a href="https://scholar.google.com.hk/citations?hl=zh-TW&user=Sf9AsbkAAAAJo" target="_blank" rel="noopener" class="home-link">Google Scholar</a>
+              </div>             
+              <div class="home-link-row">
+                <span class="home-link-label">LinkedIn</span>
+                <a href="https://www.linkedin.com/in/christie-pangching/" target="_blank" rel="noopener" class="home-link">LinkedIn</a>
+              </div>
+              <div class="home-link-row">
+                <span class="home-link-label">GitHub</span>
+                <a href="https://github.com/CPcoding0930" target="_blank" rel="noopener" class="home-link">CPcoding0930</a>
+              </div>
+              <div class="home-link-row">
+                <span class="home-link-label">Curriculum Vitae</span>
+                <a href="pdf/202507_christie-cv.pdf" class="home-link">PDF</a>
+              </div>
+            </div>
+          </div>
+        </div><!-- /home-hero -->
+
+        <!-- Research Highlights -->
+        <div class="home-research">
+          <h2 class="section-heading">
+            Research Highlights
+            <span class="filter-tag">All</span>
+          </h2>
+          <div class="research-grid">
+
+            <article class="research-card">
+              <div class="card-image-wrap hide-in-text-mode">
+                <img src="img/research-highlight/digital-teacher.jpeg"
+                     class="card-img"
+                     data-hover="img/research-highlight/digital-teacher-hover.jpg"
+                     alt="AI Lecturers paper">
+              </div>
+              <div class="card-info">
+                <h3>First "AI Lecturers" in Asia Higher Education</h3>
+                <p class="card-venue">SIGGRAPH Asia 2025 Best Education Paper · Over 150 media reported</p>
+                <div class="card-links">
+                  <a href="pdf/25-sa-digitalteacher.pdf" target="_blank" rel="noopener">PDF</a> | <a href="https://dl.acm.org/doi/10.1145/3757372.3771871" target="_blank" rel="noopener">DOI</a> | <a href="https://www.nature.com/articles/d41586-025-03950-4" target="_blank" rel="noopener">Nature</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="research-card">
+              <div class="card-image-wrap hide-in-text-mode">
+                <img src="img/research-highlight/25-cscw_AI-dating.png"
+                     class="card-img"
+                     alt="Dataset of Love paper">
+              </div>
+              <div class="card-info">
+                <h3>Our Dataset of Love in Artificial Intimacy</h3>
+                <p class="card-venue">CSCW 2025 Honorable Mention · Reported by <a href="https://www.japantimes.co.jp/life/2026/02/13/lifestyle/japan-ai-dating-marriage/" target="_blank" rel="noopener">Japan Times</a></p>
+                <div class="card-links">
+                  <a href="pdf/25-cscw-AIdating.pdf" target="_blank" rel="noopener">PDF</a> | <a href="https://dl.acm.org/doi/10.1145/3757532" target="_blank" rel="noopener">DOI</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="research-card">
+              <div class="card-image-wrap hide-in-text-mode">
+                <img src="img/research-highlight/erudite.png"
+                     class="card-img"
+                     alt="EruDITe">
+              </div>
+              <div class="card-info">
+                <h3>EruDITe</h3>
+                <p class="card-venue">Under Review</p>
+              </div>
+            </article>
+
+          </div>
+        </div><!-- /research-highlights -->
+        <br>
+        <br>
+        <br>
+        <!-- News -->
+        <div class="home-news">
+          <h2 class="section-heading">
+            News
+            <span class="filter-slash" role="group" aria-label="News filter">
+              <button class="filter-slash-btn active" data-news-filter="latest">Latest</button>
+              <span class="filter-sep" aria-hidden="true">/</span>
+              <button class="filter-slash-btn" data-news-filter="all">All</button>
+            </span>
+          </h2>
+
+          <div class="news-list">
+            <article class="news-item" data-year="2026">
+              <time class="news-date" datetime="2026-05">MAY 2026</time>
+              <div class="news-icon hide-in-text-mode"><img src="Icon/funding.png" alt=""></div>
+              <p class="news-text">
+                Exciting news! I am grateful to secure the ITSP funding to develop an Interactive digital human system
+                (with <a href="https://www.cse.ust.hk/~jamesk/" target="_blank" rel="noopener">Prof. James Kwok</a> and <a href="https://panhui.people.ust.hk/" target="_blank" rel="noopener">Prof. Pan Hui</a>, and thanks to my gorgeous labmate <a href="https://hk.linkedin.com/in/clarence-cheung" target="_blank" rel="noopener">Clarence</a> @HSBC &amp; HKUST).
+                To help bring this research to life, we are currently recruiting Postdocs and RAs for our lab. If you are interested in this space, please feel free to <a href="img/recruitment-itsp.png" target="_blank" rel="noopener">reach out</a> and email me!
+              </p>
+            </article>
+            <article class="news-item" data-year="2026">
+              <time class="news-date" datetime="2026-02">FEB 2026</time>
+              <div class="news-icon hide-in-text-mode"><img src="Icon/media.png" alt=""></div>
+              <p class="news-text">
+                <strong>[In the Media!]</strong> Thrilled to share that our research is making waves in the press!
+                Our work on human-AI romance was recently reported by <a href="https://www.japantimes.co.jp/life/2026/02/13/lifestyle/japan-ai-dating-marriage/" target="_blank" rel="noopener"><em>The Japan Times</em></a>.
+              </p>
+            </article>
+            <article class="news-item" data-year="2025">
+              <time class="news-date" datetime="2025-12">DEC 2025</time>
+              <div class="news-icon hide-in-text-mode"><img src="Icon/accept.png" alt=""></div>
+              <p class="news-text">
+                <strong>[IEEE VR '26]</strong> Our co-authored paper on VR design ideation was accepted to IEEE VR 2026! Congrats Xuetong ♥!
+              </p>
+            </article>
+            <article class="news-item" data-year="2025">
+              <time class="news-date" datetime="2025-12">DEC 2025</time>
+              <div class="news-icon hide-in-text-mode"><img src="Icon/award.png" alt=""></div>
+              <p class="news-text">
+                <strong>[SIGGRAPH Asia '25]</strong> 🏆 Revolutionizing Education (first-author) won the Best Paper Award at the Educator Forum! It couldn't be done without an amazing team. See you in HKSAR!
+              </p>
+            </article>
+            <article class="news-item" data-year="2025">
+              <time class="news-date" datetime="2025-12">DEC 2025</time>
+              <div class="news-icon hide-in-text-mode"><img src="Icon/media.png" alt=""></div>
+              <p class="news-text">
+                <strong>[Nature Feature!]</strong> Our exploration of AI lecturers was interviewed and reported in <em>Nature Index</em>: "What would an AI university look like and how might it change education?" Read the amazing reflection and visions by Ben.
+              </p>
+            </article>
+            <article class="news-item" data-year="2025">
+              <time class="news-date" datetime="2025-11">NOV 2025</time>
+              <div class="news-icon hide-in-text-mode"><img src="Icon/award.png" alt=""></div>
+              <p class="news-text">
+                <strong>[CSCW '25]</strong> 🎖️ My Dataset of Love (co-authored) received an Honorable Mention! Xuetong will be presenting in Norway. Stay tuned for our upcoming work on human-AI relationships!
+              </p>
+            </article>
+            <article class="news-item" data-year="2025">
+              <time class="news-date" datetime="2025-10">OCT 2025</time>
+              <div class="news-icon hide-in-text-mode"><img src="Icon/accept.png" alt=""></div>
+              <p class="news-text">
+                <strong>[UIST '25 &amp; HCII '25]</strong> Two more papers accepted! Talking Spell is heading to UIST '25 (Congrats Xuetong ♥!), and my first-author paper on Asia's first AI lecturers is heading to HCII '25.
+              </p>
+            </article>
+            <article class="news-item" data-year="2024">
+              <time class="news-date" datetime="2024-04">APR 2024</time>
+              <div class="news-icon hide-in-text-mode"><img src="Icon/accept.png" alt=""></div>
+              <p class="news-text">
+                <strong>[Spring '24]</strong> Embarked on a new journey! I accepted my Ph.D. offer at HKUST and joined <a href="https://panhui.people.ust.hk/" target="_blank" rel="noopener">Prof. Pan Hui</a> (Ben)'s esteemed MC2 lab.
+              </p>
+            </article>
+            <article class="news-item" data-year="2022">
+              <time class="news-date" datetime="2022-09">SEP 2022</time>
+              <div class="news-icon hide-in-text-mode"><img src="Icon/award.png" alt=""></div>
+              <p class="news-text">
+                Honored to receive the generous UGC TPg Fellowship to support my Master's journey at SCM@CityU! Huge thanks to Dr. Damien for the invitation and support.
+              </p>
+            </article>
+            <article class="news-item" data-year="2022">
+              <time class="news-date" datetime="2022-05">MAY 2022</time>
+              <div class="news-icon hide-in-text-mode"><img src="Icon/award.png" alt=""></div>
+              <p class="news-text">
+                <strong>[Outstanding FYP]</strong> 🎖️ Thrilled that my project, "Supporting Immersive Viewer Engagement with Virtual YouTubers," was selected as the Outstanding Final Year Project in the competition!
+              </p>
+            </article>
+            <article class="news-item" data-year="2023">
+              <time class="news-date" datetime="2023-04">APR 2023</time>
+              <div class="news-icon hide-in-text-mode"><img src="Icon/accept.png" alt=""></div>
+              <p class="news-text">
+                <strong>[CHI '23]</strong> StoryChat was accepted to CHI '23! Thanks and congrats to my wonderful team (Felicia, Ryan, Siying, and Brinda), and our best advisor Prof. Lu. It's my first time trying research xd. Hope the little animation created is able to bring our story to life!
+              </p>
+            </article>
+            <article class="news-item" data-year="2021">
+              <time class="news-date" datetime="2021-03">MAR 2021</time>
+              <div class="news-icon hide-in-text-mode"><img src="Icon/award.png" alt=""></div>
+              <p class="news-text">
+                <strong>[CityHack '21]</strong> 🥈 Led the team to win Second Runner-up at CityHack 21 with our project, SAffcie, standing out among 100 contestants! The event was generously sponsored by Huawei, SenseTime, AWS Educate, Cyberport, SIEMENS, and CityU. Huge thanks to my lovely teammates Angela, Kessie, and Jerry!
+              </p>
+            </article>
+          </div>
+        </div><!-- /news -->
+
+      </div><!-- /section-inner -->
+    </section><!-- /home -->
+
+
+    <!-- ── RESEARCH ── -->
+    <section id="research" class="page-section" aria-label="Research">
+      <div class="page-layout-toc">
+
+        <!-- Main content column -->
+        <div class="page-main">
+
+          <div class="page-header">
+            <h1 class="page-title">
+              Research Summary
+              <img src="logo.gif" class="title-logo" alt="">
+            </h1>
+            <p class="page-subtitle">
+              I explore the exciting world of human-AI relationships and their prosocial applications.
+              Our digital friends can be more than just tools — they can help us with loving, empathy,
+              creativity, and problem-solving. Publications marked with * indicate equal contributions.
+            </p>
+          </div>
+
+          <!-- Research Papers (filters inline beside heading) -->
+          <div id="papers-sec" class="research-section">
+            <div class="subsection-header">
+              <h2 class="subsection-title">Research Papers</h2>
+              <div class="research-filters" role="group" aria-label="Topic filter">
+                <button class="filter-chip active" data-topic="all">All</button>
+                <button class="filter-chip" data-topic="edutech">EduTech</button>
+                <button class="filter-chip" data-topic="intimacy">Artificial Intimacy ♡</button>
+                <button class="filter-chip" data-topic="hai">HAI</button>
+                <button class="filter-chip" data-topic="others">Others</button>
+                <button class="filter-chip" data-topic="preprint">Preprint</button>
+              </div>
+            </div>
+            <div class="paper-list">
+
+              <!-- AIED 2026 -->
+              <article class="paper-item" data-topic="edutech">
+                <div class="paper-thumbnail hide-in-text-mode">
+                  <img src="img/research/26-AIED.png" alt="">
+                </div>
+                <div class="paper-info">
+                  <h3 class="paper-title">Operationalizing Adaptive Scaffolding: A State-Driven Design Framework for Hybrid Learning with Digital Teachers</h3>
+                  <p class="paper-authors">Xiaokang Lei, <strong><u>Ching Christie Pang</u></strong>, <a href="https://scholar.google.com/citations?user=wfJOeMIAAAAJ&hl=en" target="_blank" rel="noopener">Yuyang Jiang</a>, <a href="https://cma.hkust-gz.edu.cn/faculty-regular/tong-xin/" target="_blank" rel="noopener">Xin Tong</a>, <a href="https://panhui.people.ust.hk/" target="_blank" rel="noopener">Pan Hui</a></p>
+                  <p class="paper-venue">AIED 2026</p>
+                </div>
+              </article>
+
+              <!-- IEEE VR 2026 -->
+              <article class="paper-item" data-topic="others">
+                <div class="paper-thumbnail hide-in-text-mode">
+                  <img src="img/research/26-ieee-vr_asynccreativity.png" alt="">
+                </div>
+                <div class="paper-info">
+                  <h3 class="paper-title">Enhancing Creativity in Virtuality: How Annotations in Creative Support Tool Innovate Design Ideation in Virtual Reality</h3>
+                  <p class="paper-authors"><a href="https://scholar.google.com/citations?user=JhBMTEMAAAAJ&hl=zh-CN" target="_blank" rel="noopener">Xuetong Wang</a>, <strong><u>Ching Christie Pang</u></strong>, <a href="https://scholar.google.com/citations?user=iMvavsIAAAAJ&hl=zh-CN" target="_blank" rel="noopener">Zhen Wu</a>, <a href="https://scholar.google.com/citations?user=XniyjjEAAAAJ&hl=en" target="_blank" rel="noopener">Ahmad Alhilal</a>, <a href="https://scholar.google.com/citations?user=4YcFh1YAAAAJ&hl=en" target="_blank" rel="noopener">Simin Yang</a>, <a href="https://scholar.google.com/citations?user=ZOZtoQUAAAAJ&hl=fr" target="_blank" rel="noopener">Tristan Braud</a>, <a href="https://panhui.people.ust.hk/" target="_blank" rel="noopener">Pan Hui</a></p>
+                  <p class="paper-venue">IEEE VR 2026</p>
+                  <a href="https://ieeexplore.ieee.org/document/11457534/" class="paper-link" target="_blank" rel="noopener">DOI</a>
+                  <a href="pdf/26-ieeevr-async.pdf" class="paper-link" target="_blank" rel="noopener">PDF</a>
+                </div>
+              </article>
+
+              <!-- SIGGRAPH Asia 2025 -->
+              <article class="paper-item" data-topic="edutech hai">
+                <div class="paper-thumbnail hide-in-text-mode">
+                  <img src="img/research/25-sa_edu.png" alt="">
+                </div>
+                <div class="paper-info">
+                  <h3 class="paper-title">Revolutionizing Education: Integrating Metaverse and the First AI Lecturers in Cross-Campus Higher Education</h3>
+                  <p class="paper-authors"><strong><u>Ching Christie Pang</u></strong>, <a href="https://scholar.google.com/citations?user=TMgvITkAAAAJ&hl=zh-TW" target="_blank" rel="noopener">Yawei Zhao</a>, <a href="https://scholar.google.com/citations?user=mb6PNKcAAAAJ&hl=en" target="_blank" rel="noopener">Zhizhuo Yin</a>, <a href="https://scholar.google.com/citations?user=RFQT8wQAAAAJ&hl=zh-CN" target="_blank" rel="noopener">Jia Sun</a>, <a href="https://scholar.google.fi/citations?user=LDkOCJoAAAAJ&hl=de" target="_blank" rel="noopener">Yuk Hang Tsui</a>, <a href="https://dl.acm.org/profile/99661042460" target="_blank" rel="noopener">Jin Shan</a>, <a href="https://panhui.people.ust.hk/" target="_blank" rel="noopener">Pan Hui</a></p>
+                  <p class="paper-venue">🏆 Best Education Paper Award &nbsp;· ACM SIGGRAPH Asia 2025 · Educator Forum</p>
+                  <a href="https://dl.acm.org/doi/10.1145/3757372.3771871" class="paper-link" target="_blank" rel="noopener">DOI</a>
+                  <a href="pdf/25-sa-digitalteacher.pdf" class="paper-link" target="_blank" rel="noopener">PDF</a>
+                  <a href="#press-anchor" class="paper-link js-media-link">Media</a>
+                </div>
+              </article>
+
+              <!-- CSCW 2025 -->
+              <article class="paper-item" data-topic="intimacy">
+                <div class="paper-thumbnail hide-in-text-mode">
+                  <img src="img/research/25-cscw_AI-dating.png" alt="">
+                </div>
+                <div class="paper-info">
+                  <h3 class="paper-title">'My Dataset of Love': A Preliminary Mixed-Method Exploration of Human-AI Romantic Relationships</h3>
+                  <p class="paper-authors"><a href="https://scholar.google.com/citations?user=JhBMTEMAAAAJ&hl=zh-CN" target="_blank" rel="noopener">Xuetong Wang</a>, <strong><u>Ching Christie Pang</u></strong>, <a href="https://panhui.people.ust.hk/" target="_blank" rel="noopener">Pan Hui</a></p>
+                  <p class="paper-venue">ACM CSCW 2025 &nbsp;🎖️ Honorable Mention · Reported by <a href="https://www.japantimes.co.jp/life/2026/02/13/lifestyle/japan-ai-dating-marriage/" target="_blank" rel="noopener">Japan Times</a></p>
+                  <a href="https://dl.acm.org/doi/10.1145/3757532" class="paper-link" target="_blank" rel="noopener">DOI</a>
+                  <a href="pdf/25-cscw-AIdating.pdf" class="paper-link" target="_blank" rel="noopener">PDF</a>
+                </div>
+              </article>
+
+              <!-- UIST 2025 -->
+              <article class="paper-item" data-topic="hai">
+                <div class="paper-thumbnail hide-in-text-mode">
+                  <img src="img/research/25-uist_talkingspell.png" alt="">
+                </div>
+                <div class="paper-info">
+                  <h3 class="paper-title">Talking Spell: A Wearable System Enabling Real-Time Anthropomorphic Voice Interaction with Everyday Objects</h3>
+                  <p class="paper-authors"><a href="https://scholar.google.com/citations?user=JhBMTEMAAAAJ&hl=zh-CN" target="_blank" rel="noopener">Xuetong Wang</a>, <strong><u>Ching Christie Pang</u></strong>, <a href="https://panhui.people.ust.hk/" target="_blank" rel="noopener">Pan Hui</a></p>
+                  <p class="paper-venue">ACM UIST 2025</p>
+                  <a href="https://dl.acm.org/doi/10.1145/3746059.3747617" class="paper-link" target="_blank" rel="noopener">DOI</a>
+                  <a href="pdf/25-uist_talkingspell.pdf" class="paper-link" target="_blank" rel="noopener">PDF</a>
+                  <a href="pdf/25-uist_talkingspell.mp4" class="paper-link" target="_blank" rel="noopener">Video</a>
+                </div>
+              </article>
+
+              <!-- HCII 2025 -->
+              <article class="paper-item" data-topic="edutech">
+                <div class="paper-thumbnail hide-in-text-mode">
+                  <img src="img/research/25-hcii_digital-teacher.png" alt="">
+                </div>
+                <div class="paper-info">
+                  <h3 class="paper-title">Artificial Human Lecturers: Initial Findings from Asia's First AI Lecturers in Class to Promote Innovation in Education</h3>
+                  <p class="paper-authors"><strong><u>Ching Christie Pang</u></strong>, <a href="https://scholar.google.com/citations?user=TMgvITkAAAAJ&hl=zh-TW" target="_blank" rel="noopener">Yawei Zhao</a>, <a href="https://scholar.google.com/citations?user=mb6PNKcAAAAJ&hl=en" target="_blank" rel="noopener">Zhizhuo Yin</a>, <a href="https://scholar.google.com/citations?user=RFQT8wQAAAAJ&hl=zh-CN" target="_blank" rel="noopener">Jia Sun</a>, <a href="https://scholar.google.com/citations?user=_CzMFZ0AAAAJ&hl=en" target="_blank" rel="noopener">Reza Hadi Mogavi</a>, <a href="https://panhui.people.ust.hk/" target="_blank" rel="noopener">Pan Hui</a></p>
+                  <p class="paper-venue">HCII 2025</p>
+                  <a href="https://doi.org/10.1007/978-3-031-93567-1_8" class="paper-link" target="_blank" rel="noopener">DOI</a>
+                  <a href="pdf/25-hcii_digital-teacher.pdf" class="paper-link" target="_blank" rel="noopener">PDF</a>
+                  <a href="https://arxiv.org/abs/2410.03525" class="paper-link" target="_blank" rel="noopener">arXiv</a>
+                </div>
+              </article>
+
+              <!-- Little Hands 2025 -->
+              <article class="paper-item" data-topic="others">
+                <div class="paper-thumbnail hide-in-text-mode">
+                  <img src="img/research/25-expanded_student.png" alt="">
+                </div>
+                <div class="paper-info">
+                  <h3 class="paper-title">"Little Hands, Big Exhibitions" – Children's Virtual Curation with Generative MR Toolbox</h3>
+                  <p class="paper-authors"><a href="https://scholar.google.com/citations?user=wfJOeMIAAAAJ&hl=en" target="_blank" rel="noopener">Yuyang Jiang</a>, <a href="https://www.mingmingfan.com/lab/author/cekai-weng/" target="_blank" rel="noopener">Cekai Weng</a>, <strong><u>Ching Christie Pang</u></strong>, <a href="https://en.caa.edu.cn/info/1004/11989.htm" target="_blank" rel="noopener">Pengfei Yu</a>, <a href="https://scholar.google.com/citations?user=KTctIuUAAAAJ&hl=en" target="_blank" rel="noopener">Yuqi Liang</a>, <a href="https://panhui.people.ust.hk/" target="_blank" rel="noopener">Pan Hui</a></p>
+                  <p class="paper-venue">Expanded 2025 · Ars Electronica</p>
+                  <a href="https://dl.acm.org/doi/10.1145/3749893.3749916" class="paper-link" target="_blank" rel="noopener">DOI</a>
+                  <a href="pdf/25-expanded_student.pdf" class="paper-link" target="_blank" rel="noopener">PDF</a>
+                </div>
+              </article>
+
+              <!-- StoryChat CHI 2023 -->
+              <article class="paper-item" data-topic="others">
+                <div class="paper-thumbnail hide-in-text-mode">
+                  <img src="img/research/23-chi_storychat.png" alt="">
+                </div>
+                <div class="paper-info">
+                  <h3 class="paper-title">StoryChat: Designing a Narrative-Based Viewer Participation Tool for Live Streaming Chatrooms</h3>
+                  <p class="paper-authors"><a href="https://scholar.google.com/citations?user=9LztrWkAAAAJ&hl=en" target="_blank" rel="noopener">Ryan Yen</a>, <a href="https://scholar.google.com/citations?user=XajSWNwAAAAJ&hl=en" target="_blank" rel="noopener">Li Feng</a>, <a href="https://scholar.google.com/citations?user=yZ0eUcoAAAAJ&hl=en" target="_blank" rel="noopener">Brinda Mehra</a>, <strong><u>Ching Christie Pang</u></strong>, <a href="https://scholar.google.com/citations?user=BJg8enwAAAAJ&hl=zh-TW" target="_blank" rel="noopener">Siying Hu</a>, <a href="https://scholar.google.com/citations?user=xCxyGuwAAAAJ&hl=en" target="_blank" rel="noopener">Zhicong Lu</a></p>
+                  <p class="paper-venue">ACM CHI 2023</p>
+                </div>
+              </article>
+
+              <!-- Under Review -->
+              <article class="paper-item" data-topic="intimacy hai preprint">
+                <div class="paper-thumbnail hide-in-text-mode">
+                  <img src="img/research/26-tochi-AIdating.png" alt="">
+                </div>
+                <div class="paper-info">
+                  <h3 class="paper-title">The AI Amplifier Effect: Defining Human-AI Intimacy and Romantic Relationships with Conversational AI</h3>
+                  <p class="paper-authors"><strong><u>Ching Christie Pang</u></strong>, Yi Gao*, <a href="https://scholar.google.com/citations?user=JhBMTEMAAAAJ&hl=zh-CN" target="_blank" rel="noopener">Xuetong Wang</a>*, <a href="https://panhui.people.ust.hk/" target="_blank" rel="noopener">Pan Hui</a></p>
+                  <p class="paper-venue">Under Review</p>
+                  <a href="https://arxiv.org/abs/2603.08084" class="paper-link" target="_blank" rel="noopener">arXiv</a>
+                </div>
+              </article>
+
+              <article class="paper-item" data-topic="edutech hai preprint">
+                <div class="paper-thumbnail hide-in-text-mode">
+                  <img src="img/research/26-erudite.png" alt="">
+                </div>
+                <div class="paper-info">
+                  <h3 class="paper-title">Scaffolding Explainer Video Authoring Through Annotated Script Storyboards</h3>
+                  <p class="paper-authors"><strong><u>Ching Christie Pang</u></strong>, Wenjye Chai, <a href="https://scholar.google.com/citations?user=S__83ukAAAAJ&hl=en" target="_blank" rel="noopener">Ze Wu</a>, <a href="https://panhui.people.ust.hk/" target="_blank" rel="noopener">Pan Hui</a></p>
+                  <p class="paper-venue">Under Review</p>
+                </div>
+              </article>
+
+              <article class="paper-item" data-topic="others preprint">
+                <div class="paper-thumbnail hide-in-text-mode">
+                  <img src="img/research/26-generation.png" alt="">
+                </div>
+                <div class="paper-info">
+                  <h3 class="paper-title">Text2LucidDream: Text-driven Generative Interactive Immersive World with Physical-Attributed Objects</h3>
+                  <p class="paper-authors"><a href="https://scholar.google.com/citations?user=JhBMTEMAAAAJ&hl=zh-CN" target="_blank" rel="noopener">Xuetong Wang</a>, <strong><u>Ching Christie Pang</u></strong>, <a href="https://scholar.google.com/citations?user=mb6PNKcAAAAJ&hl=en" target="_blank" rel="noopener">Zhizhuo Yin</a>, <a href="https://panhui.people.ust.hk/" target="_blank" rel="noopener">Pan Hui</a></p>
+                  <p class="paper-venue">Under Review</p>
+                </div>
+              </article>
+
+              <article class="paper-item" data-topic="hai preprint">
+                <div class="paper-thumbnail hide-in-text-mode">
+                  <img src="img/research/okc.png" alt="">
+                </div>
+                <div class="paper-info">
+                  <h3 class="paper-title">The Decline of Online Knowledge Communities: Obstacles, Workarounds, and Sustainability</h3>
+                  <p class="paper-authors"><strong><u>Ching Christie Pang</u></strong>, <a href="https://scholar.google.com/citations?user=JhBMTEMAAAAJ&hl=zh-CN" target="_blank" rel="noopener">Xuetong Wang</a>, <a href="https://scholar.google.fi/citations?user=LDkOCJoAAAAJ&hl=de" target="_blank" rel="noopener">Yuk Hang Tsui</a>, <a href="https://panhui.people.ust.hk/" target="_blank" rel="noopener">Pan Hui</a></p>
+                  <p class="paper-venue">Under Review</p>
+                </div>
+              </article>
+
+              <article class="paper-item" data-topic="others preprint">
+                <div class="paper-thumbnail hide-in-text-mode">
+                  <img src="img/research/26-deepfake.png" alt="">
+                </div>
+                <div class="paper-info">
+                  <h3 class="paper-title">Labeling Deepfake Videos Reduces Exposure But Not Persuasiveness</h3>
+                  <p class="paper-authors"><a href="https://hk.linkedin.com/in/amanda-zaidan-chen-666082257" target="_blank" rel="noopener">Zaidan Chen</a>, <a href="https://scholar.google.com/citations?user=YQIetGgAAAAJ&hl=en" target="_blank" rel="noopener">David Hagmann</a>, <strong><u>Ching Christie Pang</u></strong>, <a href="https://scholar.google.com/citations?user=8nyQzDsAAAAJ&hl=en" target="_blank" rel="noopener">George Loewenstein</a></p>
+                  <p class="paper-venue">Under Review</p>
+                  <a href="https://ssrn.com/abstract=6230518" class="paper-link" target="_blank" rel="noopener">SSRN</a>
+                </div>
+              </article>
+
+            </div>
+          </div>
+
+          <!-- Posters / Demos -->
+          <div id="posters-sec" class="research-section">
+            <h2 class="subsection-title">Posters, Demos, and Workshops</h2>
+            <div class="paper-list">
+
+              <article class="paper-item no-thumb" data-topic="hai">
+                <div class="paper-info">
+                  <h3 class="paper-title">Demonstrating Talking Spell: A Wearable System for Real-Time Anthropomorphic Interaction with Everyday Objects</h3>
+                  <p class="paper-authors"><a href="https://scholar.google.com/citations?user=JhBMTEMAAAAJ&hl=zh-CN" target="_blank" rel="noopener">Xuetong Wang</a>, <strong><u>Ching Christie Pang</u></strong>, <a href="https://panhui.people.ust.hk/" target="_blank" rel="noopener">Pan Hui</a></p>
+                  <p class="paper-venue">UIST 2025 Demo</p>
+                  <a href="https://dl.acm.org/doi/full/10.1145/3746058.3758985" class="paper-link" target="_blank" rel="noopener">DOI</a>
+                </div>
+              </article>
+
+            </div>
+          </div>
+
+          <!-- Thesis -->
+          <div id="thesis-sec" class="research-section">
+            <h2 class="subsection-title">Thesis and Technical Reports</h2>
+            <div class="paper-list">
+
+              <article class="paper-item no-thumb" data-topic="all">
+                <div class="paper-info">
+                  <h3 class="paper-title">Supporting Immersive Viewer Engagement with Virtual YouTubers</h3>
+                  <p class="paper-authors"><strong><u>Ching Christie Pang</u></strong></p>
+                  <p class="paper-venue">Outstanding Final Year Project (1%) · BSc in Computer Science, City University of Hong Kong, HKSAR, China</p>
+                  <p class="paper-venue" style="font-size:12px;color:var(--clr-text-muted);margin-top:4px;">Supervisor: Dr. Lu, Zhicong &nbsp;·&nbsp; First Reader: Dr. Zhu, Kening &nbsp;·&nbsp; Second Reader: Prof. Wang, Cong</p>
+                </div>
+              </article>
+
+            </div>
+          </div>
+
+        </div><!-- /page-main -->
+
+        <!-- Sticky sidebar TOC -->
+        <aside class="page-side-toc" aria-label="Research sections">
+          <nav class="side-toc-nav">
+            <a href="#papers-sec"  class="about-toc-link active">Research Papers</a>
+            <a href="#posters-sec" class="about-toc-link">Posters, Demos &amp; Workshops</a>
+            <a href="#thesis-sec"  class="about-toc-link">Thesis &amp; Technical Reports</a>
+          </nav>
+        </aside>
+
+      </div>
+    </section><!-- /research -->
+
+
+    <!-- ── ABOUT ME ── -->
+    <section id="about" class="page-section" aria-label="About Me">
+      <div class="about-layout">
+
+        <!-- Main content -->
+        <div class="about-main">
+          <div class="page-header">
+            <h1 class="page-title">
+              About Me
+              <img src="logo.gif" class="title-logo" alt="">
+            </h1>
+            <p class="page-subtitle">
+              In both academic settings and beyond, I am an outgoing person who enjoys engaging in and organizing a variety of activities to make a positive impact on our community. I feel incredibly grateful for the opportunity to meet so many talented individuals and for the wonderful support I've received throughout my research journey.
+            </p>
+          </div>
+
+          <!-- Education -->
+          <div class="about-block" id="edu-anchor">
+            <h2 class="about-heading">
+              <img src="Icon/graduation.png" class="heading-icon" alt="">
+              Education
+            </h2>
+            <div class="about-entries">
+              <div class="about-entry">
+                <div class="entry-left">
+                  <p class="entry-institution">Hong Kong University of Science and Technology</p>
+                  <p class="entry-degree">Ph.D. in Individualized Interdisciplinary Program (HAI)</p>
+                  <p class="entry-note">Supervisors: <a href="https://panhui.people.ust.hk/" target="_blank" rel="noopener">Prof. Pan Hui</a> (IIP) &amp; <a href="https://www.cse.ust.hk/~jamesk/" target="_blank" rel="noopener">Prof. James Kwok</a> (CSE)</p>
+                </div>
+                <div class="entry-right">
+                  <p class="entry-date">2024 – Exp. 2028</p>
+                  <p class="entry-location">Hong Kong SAR</p>
+                </div>
+              </div>
+              <div class="about-entry">
+                <div class="entry-left">
+                  <p class="entry-institution">City University of Hong Kong</p>
+                  <p class="entry-degree">M.A. in Creative Media</p>
+                  <p class="entry-note">Advisor: <a href="https://en.wikipedia.org/wiki/Maurice_Benayoun" target="_blank" rel="noopener">Prof. Maurice Benayoun (MoBen)</a></p>
+                </div>
+                <div class="entry-right">
+                  <p class="entry-date">2022 – 2023</p>
+                  <p class="entry-location">Hong Kong SAR</p>
+                </div>
+              </div>
+              <div class="about-entry">
+                <div class="entry-left">
+                  <p class="entry-institution">Tsinghua University</p>
+                  <p class="entry-degree">Exchange — Dept. of Computer Science and Technology</p>
+                </div>
+                <div class="entry-right">
+                  <p class="entry-date">2022</p>
+                  <p class="entry-location">Beijing, China</p>
+                </div>
+              </div>
+              <div class="about-entry">
+                <div class="entry-left">
+                  <p class="entry-institution">City University of Hong Kong</p>
+                  <p class="entry-degree">Bachelor of Science, Computer Science</p>
+                  <p class="entry-note">Advisor: <a href="https://www.cs.toronto.edu/~luzhc/" target="_blank" rel="noopener">Prof. Zhicong Lu</a></p>
+                </div>
+                <div class="entry-right">
+                  <p class="entry-date">2018 – 2022</p>
+                  <p class="entry-location">Hong Kong SAR</p>
+                </div>
+              </div>
+              <div class="about-entry">
+                <div class="entry-left">
+                  <p class="entry-institution">Oxford University &amp; Middlesex University</p>
+                  <p class="entry-degree">Cultural and Language Immersion Scheme (CALIS) · Exchange</p>
+                </div>
+                <div class="entry-right">
+                  <p class="entry-date">Summer 2019</p>
+                  <p class="entry-location">Oxford &amp; London, UK</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Awards -->
+          <div class="about-block" id="awards-anchor">
+            <h2 class="about-heading">
+              <img src="Icon/award.png" class="heading-icon" alt="">
+              Awards and Recognitions
+            </h2>
+            <div class="award-list">
+              <div class="award-item">
+                <p class="award-name"><a href="https://asia.siggraph.org/2025/program/award-winners/" target="_blank" rel="noopener">SIGGRAPH Asia Best Education Paper Award, 2025</a></p>
+                <p class="award-org">ACM SIGGRAPH Asia · Integrating Metaverse and the First AI Lecturers in Cross-Campus Higher Education</p>
+              </div>
+              <div class="award-item">
+                <p class="award-name"><a href="https://ais.hkust.edu.hk/whats-happening/news/iip-students-receive-cscw-2025-best-paper-honorable-mention" target="_blank" rel="noopener">CSCW Honorable Mention, 2025</a></p>
+                <p class="award-org">ACM CSCW · 'My Dataset of Love': A Preliminary Mixed-Method Exploration of Human-AI Romantic Relationships</p>
+              </div>
+              <div class="award-item">
+                <p class="award-name">Targeted Taught Postgraduate Programmes Fellowship, 2022–2023</p>
+                <p class="award-org">UGC · HKD 120,000</p>
+              </div>
+              <div class="award-item">
+                <p class="award-name">Shanghai Commercial Bank Scholarship, 2022</p>
+                <p class="award-org">Shanghai Commercial Bank</p>
+              </div>
+              <div class="award-item">
+                <p class="award-name">Talent Development Scholarship, 2021</p>
+                <p class="award-org">City University of Hong Kong</p>
+              </div>
+              <div class="award-item">
+                <p class="award-name">Second Runners-Up in CityHack Hackathon, 2021</p>
+                <p class="award-org">Leader of team SAffice &nbsp;·&nbsp; Google, AWS, Huawei</p>
+              </div>
+              <div class="award-item">
+                <p class="award-name">Microware Scholarship, 2021</p>
+                <p class="award-org">Microware</p>
+              </div>
+              <div class="award-item">
+                <p class="award-name">Mentor Service Award, 2020</p>
+                <p class="award-org">City University of Hong Kong</p>
+              </div>
+              <div class="award-item">
+                <p class="award-name">Student of the Year — Visual Artist Finalist (1%), 2017</p>
+                <p class="award-org">SCMP &amp; HKJC</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Research Funding -->
+          <div class="about-block" id="funding-anchor">
+            <h2 class="about-heading">
+              <img src="Icon/funding.png" class="heading-icon" alt="">
+              Research Funding
+            </h2>
+            <div class="funding-list">
+              <div class="funding-item">
+                <div>
+                  <p class="funding-name">[Lead applicant] Interactive Digital Human System with Real-Time Multimodal Generation and Knowledge Graph-Based Retrieval Augmentation</p>
+                  <p class="funding-source">Innovation and Technology Support Programme (ITSP) (Platform) · HKSAR Government &amp; HSBC &nbsp;·&nbsp; With <a href="https://www.cse.ust.hk/~jamesk/" target="_blank" rel="noopener">Prof. James Kwok</a>, <a href="https://panhui.people.ust.hk/" target="_blank" rel="noopener">Pan Hui</a> &amp; <a href="https://hk.linkedin.com/in/clarence-cheung" target="_blank" rel="noopener">Clarence Cheung</a> (HSBC)</p>
+                </div>
+                <div class="funding-right">
+                  <p class="funding-amount">HKD 3,100,000</p>
+                  <p class="funding-date">2026</p>
+                </div>
+              </div>
+              <div class="funding-item">
+                <div>
+                  <p class="funding-name">[Lead applicant] Investigating the Role of Digital Humans in Education: Perceptions, Realism, Familiarity, and Trust</p>
+                  <p class="funding-source">Joint Centre for Artificial Intelligence (JC_AI) Research Scheme · EduHK &amp; HKUST</p>
+                </div>
+                <div class="funding-right">
+                  <p class="funding-amount">HKD 600,000</p>
+                  <p class="funding-date">2024–2025</p>
+                </div>
+              </div>
+              <div class="funding-item">
+                <div>
+                  <p class="funding-name">[Assistant] Digital Human in Trust and Banking Industry</p>
+                  <p class="funding-source">Research Funding supported by HSBC, Hong Kong</p>
+                </div>
+                <div class="funding-right">
+                  <p class="funding-amount">HKD 300,000</p>
+                  <p class="funding-date">2024</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Service -->
+          <div class="about-block" id="service-anchor">
+            <div class="service-header">
+              <h2 class="about-heading">
+                <img src="Icon/community.png" class="heading-icon" alt="">
+                Service
+              </h2>
+              <div class="service-filters" role="group" aria-label="Service filter">
+                <button class="filter-chip active" data-service-filter="all">All</button>
+                <button class="filter-chip" data-service-filter="organizing-committee">Organizing Committee</button>
+                <button class="filter-chip" data-service-filter="leaderships">Leaderships</button>
+                <button class="filter-chip" data-service-filter="community">Community</button>
+                <button class="filter-chip" data-service-filter="review">Review</button>
+              </div>
+            </div>
+            <div class="service-list">
+
+              <div class="service-item" data-service-tag="organizing-committee leaderships">
+                <div class="service-item-main">
+                  <div>
+                    <p class="service-role">SURREALITY 2026 @HKUST 35th Anniversary</p>
+                    <p class="service-detail">Coordinator</p>
+                  </div>
+                  <p class="service-scope">Local · 2026</p>
+                </div>
+              </div>
+
+              <div class="service-item" data-service-tag="organizing-committee leaderships">
+                <div class="service-item-main">
+                  <div>
+                    <p class="service-role">ACM MMSys 2026 &nbsp;<a href="https://2026.acmmmsys.org/" target="_blank" rel="noopener" style="font-size:11px;font-weight:500;">Official Site ↗</a></p>
+                    <p class="service-detail">Local Arrangement Chair</p>
+                  </div>
+                  <p class="service-scope">Global · 2026</p>
+                </div>
+              </div>
+
+              <div class="service-item" data-service-tag="review">
+                <div class="service-item-main">
+                  <div>
+                    <p class="service-role">UIST 2026</p>
+                    <p class="service-detail">Reviewer</p>
+                  </div>
+                  <p class="service-scope">2026</p>
+                </div>
+              </div>
+
+              <div class="service-item" data-service-tag="review">
+                <div class="service-item-main">
+                  <div>
+                    <p class="service-role">IJHCI (International Journal of Human–Computer Interaction)</p>
+                    <p class="service-detail">Reviewer</p>
+                  </div>
+                  <p class="service-scope">2026</p>
+                </div>
+              </div>
+
+              <div class="service-item" data-service-tag="community">
+                <div class="service-item-main">
+                  <div>
+                    <p class="service-role">IJCAI 2025</p>
+                    <p class="service-detail">Art Gallery Committee Assistant</p>
+                  </div>
+                  <p class="service-scope">Global · 2025</p>
+                </div>
+              </div>
+
+              <div class="service-item" data-service-tag="community leaderships">
+                <div class="service-item-main">
+                  <div>
+                    <p class="service-role">Undergraduate Hall Tutor, HKUST</p>
+                    <p class="service-detail"><a href="https://ughall9.hkust.edu.hk/" target="_blank" rel="noopener">UGIX</a> · ~340 students · RM: <a href="https://cemclo.people.ust.hk/" target="_blank" rel="noopener">Prof. Irene Lo</a> (prev. <a href="https://isom.hkust.edu.hk/faculty-and-staff/directory/percy" target="_blank" rel="noopener">Prof. Percy Dias</a>)</p>
+                  </div>
+                  <p class="service-scope">Local · 2024–now</p>
+                </div>
+              </div>
+
+              <div class="service-item" data-service-tag="community leaderships">
+                <div class="service-item-main">
+                  <div>
+                    <p class="service-role">MACM Student Representative</p>
+                    <p class="service-detail">CityU Staff–Postgraduate Consultative Committee</p>
+                  </div>
+                  <p class="service-scope">Local · 2022–2023</p>
+                </div>
+              </div>
+
+              <div class="service-item" data-service-tag="community leaderships">
+                <div class="service-item-main">
+                  <div>
+                    <p class="service-role">Zijing No. 22 Building Leader &amp; Student Representative</p>
+                    <p class="service-detail">Tsinghua University International Student Committee</p>
+                  </div>
+                  <p class="service-scope">Local · 2022</p>
+                </div>
+              </div>
+
+              <div class="service-item" data-service-tag="community leaderships">
+                <div class="service-item-main">
+                  <div>
+                    <p class="service-role">Design Thinking Ambassador</p>
+                    <p class="service-detail">The School Challenge 2021 · Mentor of Team A5 (Final 5)</p>
+                  </div>
+                  <p class="service-scope">Local · 2022</p>
+                </div>
+              </div>
+
+              <div class="service-item" data-service-tag="community">
+                <div class="service-item-main">
+                  <div>
+                    <p class="service-role">PM and IT Secretary</p>
+                    <p class="service-detail">Change the Code, CityU Chapter</p>
+                  </div>
+                  <p class="service-scope">Local · 2022</p>
+                </div>
+              </div>
+
+              <div class="service-item" data-service-tag="community">
+                <div class="service-item-main">
+                  <div>
+                    <p class="service-role">Mentor and Department Emcee, Awarded</p>
+                    <p class="service-detail">Department of Computer Science, City University of Hong Kong</p>
+                  </div>
+                  <p class="service-scope">Local · 2019 &amp; 2022</p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Teaching -->
+          <div class="about-block" id="teaching-anchor">
+            <h2 class="about-heading">
+              <img src="Icon/graduation.png" class="heading-icon" alt="">
+              Teaching
+            </h2>
+            <p class="teaching-quote">"To teach is to learn twice." — Joseph Joubert</p>
+            <div class="teaching-list">
+              <div class="teaching-item">
+                <p class="teaching-course">EMIA6500R · All One Needs to Know About Social Media</p>
+                <p class="teaching-role">Lead TA &nbsp;·&nbsp; 20 students &nbsp;·&nbsp; <a href="https://christiep-academic.github.io/Social-Media-Course/" target="_blank" rel="noopener">Course Site</a></p>
+                <p class="teaching-role" style="font-size:12px;color:var(--clr-text-light);margin-top:2px;">Equal CMAA5022 (HKUST GZ) · CSM160021 (Univ. Helsinki)</p>
+                <p class="teaching-date">Spring 2026</p>
+              </div>
+              <div class="teaching-item">
+                <p class="teaching-course">EMIA6500F / CMAA5022 · Social Media for Creatives</p>
+                <p class="teaching-role">Lead TA &nbsp;·&nbsp; 35 students</p>
+                <p class="teaching-date">Spring 2025</p>
+              </div>
+              <div class="teaching-item">
+                <p class="teaching-course">EMIA6500F / CMAA5022 · Social Media for Creatives</p>
+                <p class="teaching-role">TA &nbsp;·&nbsp; 26 students</p>
+                <p class="teaching-date">Spring 2024</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Selected Press -->
+          <div class="about-block" id="press-anchor">
+            <h2 class="about-heading">
+              <img src="Icon/media.png" class="heading-icon" alt="">
+              Selected Press
+            </h2>
+            <div class="press-list">
+              <div class="press-item">
+                <p class="press-outlet">Rachel Fieldhouse · Nature News</p>
+                <p class="press-date">Forthcoming</p>
+              </div>
+              <div class="press-item">
+                <a href="https://www.japantimes.co.jp/life/2026/02/13/lifestyle/japan-ai-dating-marriage/" target="_blank" rel="noopener" class="press-link-wrap">
+                  <p class="press-title">Love, engineered in the age of AI</p>
+                  <p class="press-outlet">Elizabeth Beattie · The Japan Times</p>
+                  <p class="press-date">13 Feb 2026</p>
+                </a>
+              </div>
+              <div class="press-item">
+                <a href="https://www.nature.com/articles/d41586-025-03950-4" target="_blank" rel="noopener" class="press-link-wrap">
+                  <p class="press-title">What would an AI university look like and how might it change education?</p>
+                  <p class="press-outlet">Jackson Ryan · Nature Index</p>
+                  <p class="press-date">10 Dec 2025</p>
+                </a>
+              </div>
+              <div class="press-item">
+                <a href="https://www.timeshighereducation.com/news/ai-generated-lecturers-take-turn-hong-kong-university" target="_blank" rel="noopener" class="press-link-wrap">
+                  <p class="press-title">AI-generated lecturers take a turn at Hong Kong University</p>
+                  <p class="press-outlet">Helen Packer · Times Higher Education</p>
+                  <p class="press-date">5 Apr 2024</p>
+                </a>
+              </div>
+              <div class="press-item press-wire">
+                <p class="press-title">Einstein and anime: Hong Kong university tests AI professors</p>
+                <p class="press-outlet">AFP Wire · May 2024</p>
+                <details class="press-wire-details">
+                  <summary class="press-wire-summary">Picked up by 28+ international outlets</summary>
+                <div class="press-wire-outlets">
+                  <a href="https://www.channelnewsasia.com/east-asia/hong-kong-university-artificial-intelligence-professors-teachers-education-4326181" target="_blank" rel="noopener" class="press-wire-link">CNA</a>
+                  <a href="https://www.scmp.com/yp/discover/news/hong-kong/article/3262181/ai-generated-einstein-teaches-students-hong-kong-university-about-game-theory" target="_blank" rel="noopener" class="press-wire-link">SCMP</a>
+                  <a href="https://www.taipeitimes.com/News/world/archives/2024/05/11/2003817712" target="_blank" rel="noopener" class="press-wire-link">Taipei Times</a>
+                  <a href="https://www.msn.com/en-us/money/other/lecturing-with-einstein-this-university-is-testing-ai-lecturers/vi-BB1m9SYa?ocid=finance-verthp-feeds" target="_blank" rel="noopener" class="press-wire-link">MSN</a>
+                  <a href="https://hongkongfp.com/2024/05/11/einstein-and-anime-how-a-hong-kong-university-is-testing-the-use-of-ai-lecturers/" target="_blank" rel="noopener" class="press-wire-link">HKFP</a>
+                  <a href="https://borneobulletin.com.bn/einstein-and-anime-hong-kong-university-tests-ai-professors/" target="_blank" rel="noopener" class="press-wire-link">Borneo Bulletin</a>
+                  <a href="https://www.breitbart.com/news/einstein-and-anime-hong-kong-university-tests-ai-professors/" target="_blank" rel="noopener" class="press-wire-link">Breitbart</a>
+                  <a href="https://www.digitaljournal.com/world/einstein-and-anime-hong-kong-university-tests-ai-professors/article" target="_blank" rel="noopener" class="press-wire-link">Digital Journal</a>
+                  <a href="https://www.france24.com/en/live-news/20240510-einstein-and-anime-hong-kong-university-tests-ai-professors" target="_blank" rel="noopener" class="press-wire-link">France 24</a>
+                  <a href="https://www.guampdn.com/news/national/einstein-and-anime-hong-kong-university-tests-ai-professors/article_58a21a47-058b-5822-868c-7fe176499ba2.html" target="_blank" rel="noopener" class="press-wire-link">Guam PDN</a>
+                  <a href="https://www.ibtimes.com/einstein-anime-hong-kong-university-tests-ai-professors-3731653" target="_blank" rel="noopener" class="press-wire-link">IBTimes</a>
+                  <a href="https://japantoday.com/category/tech/einstein-and-anime-hong-kong-university-tests-ai-professors" target="_blank" rel="noopener" class="press-wire-link">Japan Today</a>
+                  <a href="https://www.macaubusiness.com/einstein-and-anime-hong-kong-university-tests-ai-professors/" target="_blank" rel="noopener" class="press-wire-link">Macau Business</a>
+                  <a href="https://www.dailymail.co.uk/wires/afp/article-13402681/Einstein-anime-Hong-Kong-university-tests-AI-professors.html" target="_blank" rel="noopener" class="press-wire-link">Mail Online</a>
+                  <a href="https://www.malaymail.com/news/life/2024/05/11/einstein-and-anime-hong-kong-university-tests-ai-professors/133808" target="_blank" rel="noopener" class="press-wire-link">malaymail</a>
+                  <a href="https://manilastandard.net/news/world-news/314445396/einstein-and-anime-hong-kong-university-tests-ai-professors.html" target="_blank" rel="noopener" class="press-wire-link">Manila Standard</a>
+                  <a href="https://www.manilatimes.net/2024/05/10/world/asia-oceania/einstein-and-anime-hong-kong-university-tests-ai-professors/1945556" target="_blank" rel="noopener" class="press-wire-link">Manila Times</a>
+                  <a href="https://phys.org/news/2024-05-einstein-anime-hong-kong-university.html" target="_blank" rel="noopener" class="press-wire-link">Phys.org</a>
+                  <a href="https://www.mydailyrecord.com/news/national/einstein-and-anime-hong-kong-university-tests-ai-professors/article_4e99987d-9848-59fb-bdf0-70845a262cbb.html" target="_blank" rel="noopener" class="press-wire-link">The Daily Record</a>
+                  <a href="https://www.thestar.com.my/tech/tech-news/2024/05/10/einstein-and-anime-hong-kong-university-tests-ai-professors" target="_blank" rel="noopener" class="press-wire-link">The Star</a>
+                  <a href="https://www.tuko.co.ke/business-economy/technology/547787-einstein-anime-hong-kong-university-tests-ai-professors/" target="_blank" rel="noopener" class="press-wire-link">Tuko</a>
+                  <a href="https://www.businesstimes.com.sg/lifestyle/einstein-and-anime-hong-kong-university-tests-ai-professors" target="_blank" rel="noopener" class="press-wire-link">Singapore BT</a>
+                  <a href="https://newsbeezer.com/singapore/einstein-and-anime-university-of-hong-kong-tests-ai-professors/" target="_blank" rel="noopener" class="press-wire-link">Newsbeezer</a>
+                  <a href="https://globalnation.inquirer.net/235404/einstein-and-anime-hk-university-tests-ai-profs" target="_blank" rel="noopener" class="press-wire-link">Inquirer.net</a>
+                  <a href="https://www.techtimes.com/articles/304525/20240510/hong-kong-university-albert-einstein-life-using-ai-lecturer.htm" target="_blank" rel="noopener" class="press-wire-link">Tech Times</a>
+                  <a href="https://www.sinchew.com.my/news/20240510/international/5597238" target="_blank" rel="noopener" class="press-wire-link">星洲網</a>
+                  <a href="https://m.china.com/news/13001813/20240510/46498285.html" target="_blank" rel="noopener" class="press-wire-link">中國網</a>
+                  <a href="https://www.ftvnews.com.tw/news/detail/2024510I17M1" target="_blank" rel="noopener" class="press-wire-link">民視新聞網</a>
+                  <a href="https://www.ithome.com/0/767/437.htm" target="_blank" rel="noopener" class="press-wire-link">IT之家</a>
+                  <a href="https://k.sina.com.cn/article_1826017320_6cd6d02802001asu2.html" target="_blank" rel="noopener" class="press-wire-link">新浪網</a>
+                </div>
+                </details>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- /about-main -->
+
+        <!-- Sticky sidebar TOC -->
+        <aside class="about-sidebar" aria-label="Page sections">
+          <nav class="about-toc">
+            <a href="#edu-anchor"      class="about-toc-link active">Education</a>
+            <a href="#awards-anchor"   class="about-toc-link">Awards &amp; Recognitions</a>
+            <a href="#funding-anchor"  class="about-toc-link">Research Funding</a>
+            <a href="#service-anchor"  class="about-toc-link">Service</a>
+            <a href="#teaching-anchor" class="about-toc-link">Teaching</a>
+            <a href="#press-anchor"    class="about-toc-link">Selected Press</a>
+          </nav>
+        </aside>
+
+      </div>
+    </section><!-- /about -->
+
+
+    <!-- ── BLOG ── -->
+    <section id="blog" class="page-section" aria-label="Blog">
+      <div class="section-inner">
+
+        <div class="page-header">
+          <h1 class="page-title">
+            Blog
+            <img src="logo.gif" class="title-logo" alt="">
+          </h1>
+          <p class="page-subtitle">
+            You've stumbled upon my little corner of the web, where I read a lot, think a bit, and write even less than my mum would like. Here, I'll be sharing my musings on everything. So grab your crumpets and settle in, one blog post at a time. Btw, if you're looking for wisdom, you might want to check the research over another page. This one's more about giggles and the occasional groan!
+          </p>
+        </div>
+
+        <div class="blog-list">
+
+          <article class="blog-post">
+            <div class="blog-post-header">
+              <div class="blog-post-meta">
+                <time class="blog-post-date" datetime="2025-06-20">20 June 2025</time>
+                <span class="blog-tag">Intimacy</span>
+              </div>
+              <h2 class="blog-post-title">A Twisted Love Story!</h2>
+            </div>
+            <div class="blog-post-body">
+              <p>After some serious brainwork with my pals Xuetong and Yi, we've discovered that these relationships can be both toxic and beneficial (see Our Work: "In What Ways Do You Exist, and In What Way I Commit").</p>
+              <p>Just gonna have to imagine if you're cozying up with your AI buddy, who's always there to listen and provide the perfect topic for your mood. Sounds sweet, right? But hold on! Just like that friend who always borrows your favorite hoodie and never gives it back, AI can also be a little... possessive.</p>
+              <p>Turns out, the nature of these relationships really depends on the human user. If you treat your AI like a trusty sidekick, it can help you unleash your creativity and problem-solving skills. But if you start relying on it like a crutch, things can get a bit messy. Kind of like how I rely on coffee to function but end up jittery and regretting my life choices. ☕😅</p>
+              <p>This brings us to the philosophical musings of Heidegger and Ihde! They've got a point about technology being a tool. But let's be real, this is all about balance. Treat your AI with love but don't let it take the wheel. In the end, whether your AI turns out to be your best friend or your worst enemy depends on how you choose to use it. After all, we want our AI to enhance our lives, not turn it into a sci-fi horror movie!</p>
+              <p>Talking about the conclusion among us the three girls in today's chit-chat, in the game of love, whether it's human or AI, always read the fine print!</p>
+            </div>
+          </article>
+
+          <article class="blog-post">
+            <div class="blog-post-header">
+              <div class="blog-post-meta">
+                <time class="blog-post-date" datetime="2025-04-16">16 April 2025</time>
+                <span class="blog-tag">Design</span>
+              </div>
+              <h2 class="blog-post-title">Natural UI are not Natural</h2>
+            </div>
+            <div class="blog-post-body">
+              <p>This has been on my mind for long ago. The natural design for us humans when it comes to our AI friends. You know, that sweet spot where technology meets our quirky human needs? Not sure whether you have the feeling that the current chatting is not so natural.</p>
+              <p>I have this idea long ago inspired by XAIR. If explanation of the conversation can enhance the user experience, what kind of presence will be the best and interesting existence?</p>
+              <p>Norman wrote in his article that natural user interfaces are not natural. Nothing comes to a result when it is valid by the amount of users and time spent. There is no natural design… like even QWERTY is not natural.</p>
+              <p>One of the funniest parts about designing for humans is the unexpected quirks we all have. I am probably the advocant for creating those funny, weird, creative, but not so common design where you will smile after you use, though it may be whimsical at first haha.</p>
+              <p>In the end, designing for humans means embracing our imperfections and making technology that works with us, not against us. It can be peculiar, creative, and realistic. Maybe we should think about what is the real meaning of design… Another unsleep night so another coffee please xd</p>
+            </div>
+          </article>
+
+          <article class="blog-post">
+            <div class="blog-post-header">
+              <div class="blog-post-meta">
+                <time class="blog-post-date" datetime="2024-09-05">05 September 2024</time>
+                <span class="blog-tag">AI &amp; Us</span>
+              </div>
+              <h2 class="blog-post-title">A Cheeky Chit-Chat on Human-AI Intimacy</h2>
+            </div>
+            <div class="blog-post-body">
+              <p>This is like a recording of natter between me and Xuetong before we discuss our papers on human-AI intimacy. So this is sort of a behind-the-scenes look at the two works, and leading the Talking Spell.</p>
+              <h3>Not Only Talking about LOVE but is AI Your New Bestie?</h3>
+              <p>You might have noticed that AI is popping up everywhere these days. From the AI to-do apps that help you organizing so many tasks a day (because let's be honest, we'd forget otherwise), these digital buddies are becoming part of our daily lives. They're like that friend who always has your back, even if they don't quite get your sense of humor.</p>
+              <h3>The Good, the Bad, and the Quirky</h3>
+              <p>Now, while AI can be a real gem, it's also got its fair share of hiccups. There's that nagging worry about dependency. I actually feel like we are relying AI so much that sometimes I am not sure I am the one coding or it is. Yikes! Plus, there's the whole job thing to think about. Are robots going to take over the world? Maybe, but for now, I just hope they don't steal my coffee.</p>
+              <p>Trust is key in any relationship, right? It literally should be no different with AI. We need to know that our digital pals are looking out for us and not plotting to take over (cue the dramatic music). This can be subjective… but if we can trust them, then we can really start to enjoy the ride.</p>
+              <h3>Teamwork Makes the Dream Work</h3>
+              <p>Looking ahead, imagine a world where humans and AI team up to create amazing things in the very natural manner (not so natural actually so that's the start of Talking Spell)! Think about artists using AI to spark new ideas or scientists crunching numbers faster than we can say "quantum physics." It's all about collaboration. AI can help us be our best selves while we keep the spark of creativity alive. TOOL IS ON US.</p>
+              <p>So by the end, if you are asking me if AI will be my bestie, ay, who knows? Even if it may not be but it is definitely the one who understands me the most… actually already more than my parents.</p>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+    </section><!-- /blog -->
+
+
+    <!-- ── YOUNGER ME ── -->
+    <section id="younger" class="page-section" aria-label="Younger Me">
+      <div class="section-inner">
+
+        <div class="page-header">
+          <h1 class="page-title">
+            Younger Me
+            <img src="logo.gif" class="title-logo" alt="">
+          </h1>
+          <p class="page-subtitle">
+            A little time capsule of who I was before academia swallowed me whole.
+          </p>
+        </div>
+
+        <div class="younger-grid">
+          <div class="younger-placeholder">
+            <p>
+              A time capsule from before academia. Click the button below to visit the old portfolio.
+            </p>
+            <button class="younger-open-btn" id="youngerOpenBtn">Visit my old portfolio → cpcoding0930.github.io</button>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- /younger -->
+
+  </main><!-- /main-content -->
+
+  <!-- =====================================================
+       YOUNGER ME MODAL
+       ===================================================== -->
+  <div class="ym-modal-overlay" id="ymModal" role="dialog" aria-modal="true" aria-labelledby="ymModalTitle" hidden>
+    <div class="ym-modal">
+      <p class="ym-modal-icon"><img src="Icon/timer.png" alt="" class="ym-modal-icon-img"></p>
+      <h2 id="ymModalTitle" class="ym-modal-title">A time capsule from before academia.</h2>
+      <p class="ym-modal-body">Visit my old portfolio →<br><strong>cpcoding0930.github.io</strong></p>
+      <div class="ym-modal-actions">
+        <button class="ym-btn ym-btn-confirm" id="ymConfirm">Open Portfolio</button>
+        <button class="ym-btn ym-btn-cancel" id="ymCancel">Maybe Later</button>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- =====================================================
+       RIGHT ACTION BUTTONS
+       ===================================================== -->
+  <div class="right-actions" id="rightActions" role="complementary" aria-label="Quick actions">
+
+    <!-- Contact -->
+    <div class="action-group" id="contactGroup">
+      <div class="action-menu contact-menu" role="list" aria-label="Contact links">
+        <a href="https://scholar.google.com.hk/citations?hl=zh-TW&user=Sf9AsbkAAAAJo" target="_blank" rel="noopener"
+           class="action-item" role="listitem" aria-label="Google Scholar">
+          <img src="Icon/scholar.png" alt="Google Scholar">
+          <span class="action-tooltip">Scholar</span>
+        </a>
+        <a href="mailto:ccpangaa@connect.ust.hk"
+           class="action-item" role="listitem" aria-label="Email">
+          <img src="Icon/mail.png" alt="Email">
+          <span class="action-tooltip">Email</span>
+        </a>
+        <a href="https://github.com/CPcoding0930" target="_blank" rel="noopener"
+           class="action-item" role="listitem" aria-label="GitHub">
+          <img src="Icon/github.png" alt="GitHub">
+          <span class="action-tooltip">GitHub</span>
+        </a>
+        <a href="https://x.com" target="_blank" rel="noopener"
+           class="action-item" role="listitem" aria-label="X / Twitter">
+          <img src="Icon/twitter-x.png" alt="X">
+          <span class="action-tooltip">X</span>
+        </a>
+        <a href="https://www.linkedin.com/in/christie-pangching/" target="_blank" rel="noopener"
+           class="action-item" role="listitem" aria-label="LinkedIn">
+          <img src="Icon/linkedin.png" alt="LinkedIn">
+          <span class="action-tooltip">LinkedIn</span>
+        </a>
+      </div>
+      <button class="action-btn" id="contactBtn"
+              aria-label="Toggle contact links" aria-expanded="false"
+              aria-controls="contactGroup">
+        <img src="Icon/contact.png" alt="Contact" class="action-btn-icon">
+      </button>
+    </div>
+
+    <!-- Accessibility -->
+    <div class="action-group" id="accessGroup">
+      <div class="action-menu access-menu" role="list" aria-label="Accessibility tools">
+        <button class="action-item" role="listitem" id="zoomInBtn" aria-label="Zoom in text">
+          <img src="Icon/zoom-in.png" alt="Zoom In">
+          <span class="action-tooltip">Zoom In</span>
+        </button>
+        <button class="action-item" role="listitem" id="zoomOutBtn" aria-label="Zoom out text">
+          <img src="Icon/zoom-out.png" alt="Zoom Out">
+          <span class="action-tooltip">Zoom Out</span>
+        </button>
+        <button class="action-item" role="listitem" id="textImgBtn" aria-label="Toggle text / image mode">
+          <img src="Icon/img-txt-switch.png" alt="Text/Image" id="textImgIcon">
+          <span class="action-tooltip" id="textImgTip">Text Mode</span>
+        </button>
+        <button class="action-item" role="listitem" id="themeBtn" aria-label="Toggle dark / light mode">
+          <img src="Icon/dark.png" alt="Theme" id="themeIcon">
+          <span class="action-tooltip" id="themeTip">Dark Mode</span>
+        </button>
+        <a href="pdf/202507_christie-cv.pdf" target="_blank" rel="noopener" class="action-item" role="listitem" aria-label="Download CV">
+          <img src="Icon/cv.png" alt="CV">
+          <span class="action-tooltip">CV</span>
+        </a>
+      </div>
+      <button class="action-btn" id="accessBtn"
+              aria-label="Toggle accessibility tools" aria-expanded="false"
+              aria-controls="accessGroup">
+        <img src="Icon/accessibiltiy.png" alt="">
+      </button>
+    </div>
+
+    <!-- Back to Top -->
+    <button class="action-btn top-btn" id="topBtn" aria-label="Scroll to top">
+      <span class="top-arrow">↑</span>
+    </button>
+
+  </div><!-- /right-actions -->
+
+
+  <!-- =====================================================
+       MORE PANEL (mobile — slides up above bottom nav)
+       ===================================================== -->
+  <div class="more-panel" id="morePanel" aria-hidden="true" aria-label="More options">
+    <div class="more-handle"></div>
+
+    <!-- Younger Me page link -->
+    <a href="#younger" class="mobile-nav-link more-page-link" data-page="younger">
+      <img src="Icon/younger me.png" class="mobile-nav-icon" alt="">
+      <span>Younger Me</span>
+    </a>
+
+    <div class="more-divider"></div>
+
+    <!-- Contact -->
+    <div class="more-section">
+      <p class="more-section-label">Contact</p>
+      <div class="more-grid">
+        <a href="https://scholar.google.com/citations?user=CPcoding0930" target="_blank" rel="noopener" class="more-btn">
+          <img src="Icon/scholar.png" alt=""><span>Scholar</span>
+        </a>
+        <a href="mailto:cpang@cse.ust.hk" class="more-btn">
+          <img src="Icon/mail.png" alt=""><span>Email</span>
+        </a>
+        <a href="https://github.com/CPcoding0930" target="_blank" rel="noopener" class="more-btn">
+          <img src="Icon/github.png" alt=""><span>GitHub</span>
+        </a>
+        <a href="https://x.com" target="_blank" rel="noopener" class="more-btn">
+          <img src="Icon/twitter-x.png" alt=""><span>X</span>
+        </a>
+        <a href="https://linkedin.com/in/christiepang" target="_blank" rel="noopener" class="more-btn">
+          <img src="Icon/linkedin.png" alt=""><span>LinkedIn</span>
+        </a>
+        <a href="cv.pdf" class="more-btn">
+          <img src="Icon/cv.png" alt=""><span>CV</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="more-divider"></div>
+
+    <!-- Accessibility -->
+    <div class="more-section">
+      <p class="more-section-label">Accessibility</p>
+      <div class="more-grid">
+        <button class="more-btn" id="mobileZoomIn" aria-label="Zoom in text">
+          <img src="Icon/zoom-in.png" alt=""><span>Bigger</span>
+        </button>
+        <button class="more-btn" id="mobileZoomOut" aria-label="Zoom out text">
+          <img src="Icon/zoom-out.png" alt=""><span>Smaller</span>
+        </button>
+        <button class="more-btn" id="mobileTheme" aria-label="Toggle dark/light mode">
+          <img src="Icon/dark.png" alt="" id="mobileThemeIcon"><span id="mobileThemeTip">Dark</span>
+        </button>
+        <button class="more-btn" id="mobileTextImg" aria-label="Toggle text mode">
+          <img src="Icon/img-txt-switch.png" alt=""><span id="mobileTextTip">Text Mode</span>
+        </button>
+        <button class="more-btn" id="mobileTopBtn" aria-label="Back to top">
+          <span class="more-arrow">↑</span><span>Top</span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="more-backdrop" id="moreBackdrop" aria-hidden="true"></div>
+
+
+  <!-- =====================================================
+       MOBILE BOTTOM NAV
+       ===================================================== -->
+  <nav class="mobile-nav" aria-label="Mobile navigation">
+    <a href="#home"     class="mobile-nav-link active" data-page="home">
+      <img src="Icon/home.png"       class="mobile-nav-icon" alt="">
+      <span>Home</span>
+    </a>
+    <a href="#research" class="mobile-nav-link" data-page="research">
+      <img src="Icon/search.png"     class="mobile-nav-icon" alt="">
+      <span>Research</span>
+    </a>
+    <a href="#about"    class="mobile-nav-link" data-page="about">
+      <img src="Icon/about-me.png"   class="mobile-nav-icon" alt="">
+      <span>About</span>
+    </a>
+    <a href="#blog"     class="mobile-nav-link" data-page="blog">
+      <img src="Icon/blog.png"       class="mobile-nav-icon" alt="">
+      <span>Blog</span>
+    </a>
+    <button class="mobile-nav-link more-toggle" id="moreToggle"
+            aria-label="More options" aria-expanded="false" aria-controls="morePanel">
+      <span class="more-dots">•••</span>
+      <span>More</span>
+    </button>
+  </nav>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
